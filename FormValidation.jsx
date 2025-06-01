@@ -68,7 +68,7 @@ const FormValidation = () => {
     });
 
     const handleSubmit = async (e) => {
-    e.preventDefault(); // Important: prevent page reload
+    e.preventDefault(); 
 
     try {
         await validationSchema.validate(formdata, { abortEarly: false });
@@ -79,7 +79,7 @@ const FormValidation = () => {
         error.inner.forEach(err => {
             newErrors[err.path] = err.message;
         });
-        setErrors(newErrors); // ✅ Move this inside the catch
+        setErrors(newErrors); 
     }
 };
 
